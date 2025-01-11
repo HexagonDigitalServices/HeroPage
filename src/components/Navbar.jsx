@@ -20,7 +20,11 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="bg-white dark:bg-black text-black dark:text-white border-b border-gray-200 dark:border-gray-700 shadow-sm fixed top-0 left-0 w-full z-50">
+        <nav
+            className={`bg-white dark:bg-black text-black dark:text-white border-b border-gray-200 dark:border-gray-700 shadow-sm fixed top-0 left-0 w-full z-50 transition duration-300 ease-in-out ${
+                darkMode ? "shadow-[0_0_15px_3px_rgba(255,255,0,0.6)]" : "shadow-[0_0_15px_3px_rgba(0,0,255,0.4)]"
+            }`}
+        >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     {/* Left Section: Logo */}
@@ -39,21 +43,19 @@ const Navbar = () => {
                     <div className="hidden md:flex space-x-8 text-lg font-medium">
                         <a
                             href="#home"
-                            className="hover:text-teal-500 dark:hover:text-gray-300 transition duration-200 
-                            dark:hover:underline underline-offset-4"
+                            className="hover:text-teal-500 dark:hover:text-gray-300 transition duration-200 dark:hover:underline underline-offset-4"
                         >
                             Home
                         </a>
                         <a
                             href="#about"
-                            className="hover:text-teal-500 dark:hover:text-gray-300 transition duration-200 
-                            dark:hover:underline underline-offset-4">
+                            className="hover:text-teal-500 dark:hover:text-gray-300 transition duration-200 dark:hover:underline underline-offset-4"
+                        >
                             About
                         </a>
                         <a
                             href="#contact"
-                            className="hover:text-teal-500 dark:hover:text-gray-300 transition duration-200 
-                            dark:hover:underline underline-offset-4"
+                            className="hover:text-teal-500 dark:hover:text-gray-300 transition duration-200 dark:hover:underline underline-offset-4"
                         >
                             Contact
                         </a>
@@ -66,9 +68,11 @@ const Navbar = () => {
                         </button>
                         <button
                             onClick={toggleDarkMode}
-                            className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 shadow-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-200"
+                            className={`p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 shadow-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-200 ${
+                                darkMode ? "animate-pulse text-yellow-400" : "text-gray-500"
+                            }`}
                         >
-                            {darkMode ? <FaSun className="text-yellow-400" /> : <FaMoon />}
+                            {darkMode ? <FaSun /> : <FaMoon />}
                         </button>
                     </div>
 
@@ -86,34 +90,38 @@ const Navbar = () => {
 
             {/* Mobile Menu */}
             {menuOpen && (
-                <div className="md:hidden bg-white dark:bg-black text-black dark:text-white p-4 space-y-4 shadow-lg">
+                <div className="md:hidden bg-gradient-to-b from-teal-500 to-gray-700 dark:from-gray-900 dark:to-black text-white p-4 space-y-4 shadow-lg transition duration-300 ease-in-out">
                     <a
                         href="#home"
-                        className="block text-lg font-medium hover:text-teal-500 dark:hover:text-gray-300 transition duration-200"
+                        className="block text-lg font-medium hover:text-teal-300 transition duration-200"
                         onClick={() => setMenuOpen(false)}
                     >
                         Home
                     </a>
                     <a
                         href="#about"
-                        className="block text-lg font-medium hover:text-teal-500 dark:hover:text-gray-300 transition duration-200"
+                        className="block text-lg font-medium hover:text-teal-300 transition duration-200"
                         onClick={() => setMenuOpen(false)}
                     >
                         About
                     </a>
                     <a
                         href="#contact"
-                        className="block text-lg font-medium hover:text-teal-500 dark:hover:text-gray-300 transition duration-200"
+                        className="block text-lg font-medium hover:text-teal-300 transition duration-200"
                         onClick={() => setMenuOpen(false)}
                     >
                         Contact
                     </a>
-                    <button
-                        onClick={toggleDarkMode}
-                        className="w-full flex justify-center items-center px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm hover:bg-gray-100 dark:hover:bg-gray-800 transition duration-200"
-                    >
-                        {darkMode ? "Light Mode" : "Dark Mode"}
-                    </button>
+                    <div className="flex justify-center">
+                        <button
+                            onClick={toggleDarkMode}
+                            className={`p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 shadow-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-200 ${
+                                darkMode ? "animate-pulse text-yellow-400" : "text-gray-500"
+                            }`}
+                        >
+                            {darkMode ? <FaSun /> : <FaMoon />}
+                        </button>
+                    </div>
                 </div>
             )}
         </nav>
