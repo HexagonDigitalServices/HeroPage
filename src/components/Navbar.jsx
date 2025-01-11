@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { FaMoon, FaSun, FaBars, FaTimes } from "react-icons/fa";
+import image1 from "../assets/image1.jpg";
 
 const Navbar = () => {
     const [darkMode, setDarkMode] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
 
     const toggleDarkMode = () => {
         setDarkMode(!darkMode);
@@ -12,88 +15,107 @@ const Navbar = () => {
         }
     };
 
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
+
     return (
-        <nav className="bg-gray-100 dark:bg-gray-800 shadow-md">
+        <nav className="bg-white dark:bg-black text-black dark:text-white border-b border-gray-200 dark:border-gray-700 shadow-sm fixed top-0 left-0 w-full z-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
-                    {/* Left Section: Logo and Text */}
+                    {/* Left Section: Logo */}
                     <div className="flex items-center">
                         <img
-                            src="https://via.placeholder.com/40"
+                            src={image1}
                             alt="Logo"
-                            className="h-10 w-10 mr-2"
+                            className="h-10 w-10 rounded-full border-2 border-gray-300 dark:border-gray-600 shadow-md mr-3"
                         />
-                        <span className="text-xl font-semibold dark:text-white">
-                            MyBrand
+                        <span className="text-2xl font-semibold tracking-wide">
+                            FlyKite
                         </span>
                     </div>
 
-                    {/* Middle Section: Navigation Links */}
-                    <div className="hidden md:flex space-x-8">
+                    {/* Middle Section: Links */}
+                    <div className="hidden md:flex space-x-8 text-lg font-medium">
                         <a
                             href="#home"
-                            className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                            className="hover:text-teal-500 dark:hover:text-gray-300 transition duration-200 
+                            dark:hover:underline underline-offset-4"
                         >
                             Home
                         </a>
                         <a
                             href="#about"
-                            className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
-                        >
+                            className="hover:text-teal-500 dark:hover:text-gray-300 transition duration-200 
+                            dark:hover:underline underline-offset-4">
                             About
                         </a>
                         <a
                             href="#contact"
-                            className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                            className="hover:text-teal-500 dark:hover:text-gray-300 transition duration-200 
+                            dark:hover:underline underline-offset-4"
                         >
                             Contact
                         </a>
                     </div>
 
-                    {/* Right Section: Login and Dark Mode Toggle */}
-                    <div className="flex items-center space-x-4">
-                        <button className="bg-blue-600 text-white px-4 py-2 rounded-md shadow hover:bg-blue-700">
+                    {/* Right Section: Buttons */}
+                    <div className="hidden md:flex items-center space-x-4">
+                        <button className="px-4 py-2 border border-teal-700 dark:border-gray-600 rounded-md shadow-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition duration-200">
                             Login
                         </button>
                         <button
                             onClick={toggleDarkMode}
-                            className="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                            className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 shadow-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-200"
                         >
-                            {darkMode ? (
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="h-6 w-6 text-yellow-300"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M12 3v1m0 16v1m8.364-10.364l-.707.707m-12.728 0l-.707-.707m16 8.364l-.707-.707m-12.728 0l-.707.707M21 12h-1M4 12H3m17.364-4.636l-.707.707m-12.728 0l-.707-.707m16 8.364l-.707-.707m-12.728 0l-.707.707"
-                                    />
-                                </svg>
-                            ) : (
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="h-6 w-6 text-gray-800 dark:text-gray-300"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M12 3v1m0 16v1m8.364-10.364l-.707.707m-12.728 0l-.707-.707m16 8.364l-.707-.707m-12.728 0l-.707.707M21 12h-1M4 12H3m17.364-4.636l-.707.707m-12.728 0l-.707-.707m16 8.364l-.707-.707m-12.728 0l-.707.707"
-                                    />
-                                </svg>
-                            )}
+                            {darkMode ? <FaSun className="text-yellow-400" /> : <FaMoon />}
+                        </button>
+                    </div>
+
+                    {/* Mobile Menu Toggle */}
+                    <div className="md:hidden flex items-center">
+                        <button
+                            onClick={toggleMenu}
+                            className="text-2xl focus:outline-none hover:text-gray-500 dark:hover:text-gray-300 transition duration-200"
+                        >
+                            {menuOpen ? <FaTimes /> : <FaBars />}
                         </button>
                     </div>
                 </div>
             </div>
+
+            {/* Mobile Menu */}
+            {menuOpen && (
+                <div className="md:hidden bg-white dark:bg-black text-black dark:text-white p-4 space-y-4 shadow-lg">
+                    <a
+                        href="#home"
+                        className="block text-lg font-medium hover:text-teal-500 dark:hover:text-gray-300 transition duration-200"
+                        onClick={() => setMenuOpen(false)}
+                    >
+                        Home
+                    </a>
+                    <a
+                        href="#about"
+                        className="block text-lg font-medium hover:text-teal-500 dark:hover:text-gray-300 transition duration-200"
+                        onClick={() => setMenuOpen(false)}
+                    >
+                        About
+                    </a>
+                    <a
+                        href="#contact"
+                        className="block text-lg font-medium hover:text-teal-500 dark:hover:text-gray-300 transition duration-200"
+                        onClick={() => setMenuOpen(false)}
+                    >
+                        Contact
+                    </a>
+                    <button
+                        onClick={toggleDarkMode}
+                        className="w-full flex justify-center items-center px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm hover:bg-gray-100 dark:hover:bg-gray-800 transition duration-200"
+                    >
+                        {darkMode ? "Light Mode" : "Dark Mode"}
+                    </button>
+                </div>
+            )}
         </nav>
     );
 };
