@@ -6,8 +6,7 @@ const Hero = ({ darkMode }) => {
         <div
             className={`${
                 darkMode ? "bg-gradient-to-b from-gray-800 to-black" : "bg-gradient-to-b from-green-50 to-green-100"
-            } transition duration-300`}
-        >
+            } transition duration-300`}>
             <section className="py-10 sm:py-16 lg:py-24">
                 <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">

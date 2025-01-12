@@ -18,8 +18,7 @@ const Footer = ({ isDarkMode }) => {
             className={`transition-all relative ${isDarkMode
                 ? "bg-yellow-300 text-gray-900"
                 : "bg-teal-400 text-gray-900"
-                } py-8`}
-        >
+                } py-8`}>
             <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
                 {/* Left Section */}
                 <div className="text-center md:text-left">
