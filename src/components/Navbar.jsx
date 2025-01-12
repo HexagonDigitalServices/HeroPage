@@ -2,18 +2,8 @@ import React, { useState } from "react";
 import { FaMoon, FaSun, FaBars, FaTimes } from "react-icons/fa";
 import image1 from "../assets/image1.jpg";
 
-const Navbar = () => {
-    const [darkMode, setDarkMode] = useState(false);
+const Navbar = ({ setDarkMode, darkMode }) => {
     const [menuOpen, setMenuOpen] = useState(false);
-
-    const toggleDarkMode = () => {
-        setDarkMode(!darkMode);
-        if (darkMode) {
-            document.documentElement.classList.remove("dark");
-        } else {
-            document.documentElement.classList.add("dark");
-        }
-    };
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
@@ -68,7 +58,7 @@ const Navbar = () => {
                             Login
                         </button>
                         <button
-                            onClick={toggleDarkMode}
+                            onClick={() => setDarkMode(!darkMode)}
                             className={`p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 shadow-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-200 ${darkMode ? "animate-pulse text-yellow-400" : "text-gray-500"
                                 }`}
                         >
@@ -114,7 +104,7 @@ const Navbar = () => {
                     </a>
                     <div className="flex justify-center">
                         <button
-                            onClick={toggleDarkMode}
+                            onClick={() => setDarkMode(!darkMode)}
                             className={`p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 shadow-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-200 ${darkMode ? "animate-pulse text-yellow-400" : "text-gray-500"
                                 }`}
                         >
