@@ -17,7 +17,7 @@ const Footer = ({ isDarkMode }) => {
         <footer
             className={`transition-all relative ${isDarkMode
                 ? "bg-yellow-300 text-gray-900"
-                : "bg-[#4ADE80] text-gray-900"
+                : "bg-green-100/60 text-gray-900"
                 } py-8`}>
             <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center space-y-6
                 md:space-y-0">
@@ -78,7 +78,7 @@ const Footer = ({ isDarkMode }) => {
                         type="submit"
                         className={`px-4 py-2 rounded-l-3xl w-full sm:w-auto transition-all ${isDarkMode
                             ? "bg-gray-800 hover:bg-gray-900 text-white"
-                            : "bg-blue-600 hover:bg-blue-700 text-white"
+                            : "bg-green-600 hover:bg-green-700 text-white"
                             }`}>
                         Submit
                     </button>

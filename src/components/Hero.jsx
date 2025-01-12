@@ -50,7 +50,7 @@ const Hero = ({ darkMode }) => {
                                     className={`inline-flex items-center justify-center px-8 py-3 sm:px-10 sm:py-4 text-sm sm:text-base font-semibold transition-all duration-200 ${
                                         darkMode
                                             ? "text-black bg-yellow-400 hover:bg-yellow-500"
-                                            : "text-white bg-orange-500 hover:bg-orange-600"
+                                            : "text-white bg-green-500 hover:bg-emerald-600"
                                     } focus:outline-none`}
                                     role="button"
                                 >
@@ -60,11 +60,12 @@ const Hero = ({ darkMode }) => {
                                 <a
                                     href="#"
                                     title=""
-                                    className="inline-flex items-center mt-4 text-sm sm:mt-0 sm:text-base font-semibold transition-all duration-200 hover:opacity-80"
+                                    className="inline-flex items-center mt-4 text-sm sm:mt-0 sm:text-base 
+                                    font-semibold transition-all duration-200 hover:opacity-80 text-black dark:text-white"
                                 >
                                     <AiOutlinePlayCircle
                                         className={`w-8 h-8 sm:w-10 sm:h-10 mr-2 ${
-                                            darkMode ? "text-yellow-400" : "text-orange-500"
+                                            darkMode ? "text-yellow-400" : "text-green-500"
                                         }`}
                                     />
                                     Watch video
