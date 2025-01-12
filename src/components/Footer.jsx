@@ -19,7 +19,8 @@ const Footer = ({ isDarkMode }) => {
                 ? "bg-yellow-300 text-gray-900"
                 : "bg-teal-400 text-gray-900"
                 } py-8`}>
-            <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+            <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center space-y-6
+                md:space-y-0">
                 {/* Left Section */}
                 <div className="text-center md:text-left">
                     <h1 className="text-3xl font-bold">FlyKite</h1>
@@ -34,30 +35,26 @@ const Footer = ({ isDarkMode }) => {
                         href="https://instagram.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:text-blue-500 transition-colors"
-                    >
+                        className="hover:text-red-500 transition-colors">
                         <FaInstagram />
                     </a>
                     <a
                         href="https://facebook.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:text-blue-700 transition-colors"
-                    >
+                        className="hover:text-blue-700 transition-colors">
                         <FaFacebook />
                     </a>
                     <a
                         href="https://youtube.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:text-red-500 transition-colors"
-                    >
+                        className="hover:text-red-500 transition-colors">
                         <FaYoutube />
                     </a>
                     <a
                         href="mailto:info@flykite.com"
-                        className="hover:text-green-500 transition-colors"
-                    >
+                        className="hover:text-green-500 transition-colors">
                         <FaEnvelope />
                     </a>
                 </div>
@@ -76,15 +73,13 @@ const Footer = ({ isDarkMode }) => {
                             ? "bg-gray-700 text-white"
                             : "bg-white text-gray-900"
                             }`}
-                        required
-                    />
+                        required/>
                     <button
                         type="submit"
                         className={`px-4 py-2 rounded-l-3xl w-full sm:w-auto transition-all ${isDarkMode
                             ? "bg-gray-800 hover:bg-gray-900 text-white"
                             : "bg-blue-600 hover:bg-blue-700 text-white"
-                            }`}
-                    >
+                            }`}>
                         Submit
                     </button>
                 </form>
@@ -94,12 +89,12 @@ const Footer = ({ isDarkMode }) => {
             <div className="mt-6 border-t pt-4 text-center">
                 <p className={`text-sm ${isDarkMode ? "text-gray-800" : "text-gray-700"}`}>
                     Copyright © 2025{" "}
+                    <br />
                     <a
                         href="https://hexagondigitalservices.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:underline"
-                    >
+                        className="hover:underline hover:text-purple-600">
                         Hexagon Digital Services
                     </a>
                 </p>
