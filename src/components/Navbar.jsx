@@ -21,9 +21,10 @@ const Navbar = () => {
 
     return (
         <nav
-            className={`bg-white dark:bg-black text-black dark:text-white border-b border-gray-200 dark:border-gray-700 shadow-sm fixed top-0 left-0 w-full z-50 transition duration-300 ease-in-out ${
-                darkMode ? "shadow-[0_0_15px_3px_rgba(255,255,0,0.6)]" : "shadow-[0_0_15px_3px_rgba(0,0,255,0.4)]"
-            }`}
+            className={`bg-white dark:bg-black text-black dark:text-white border-b border-gray-200 dark:border-gray-700 shadow-sm fixed top-0 left-0 w-full z-50 transition duration-300 ease-in-out ${darkMode
+                    ? "shadow-[0_0_20px_5px_rgba(255,255,0,0.8)]"
+                    : "shadow-[0_0_20px_5px_rgba(0,0,255,0.6)]"
+                }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
@@ -68,9 +69,8 @@ const Navbar = () => {
                         </button>
                         <button
                             onClick={toggleDarkMode}
-                            className={`p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 shadow-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-200 ${
-                                darkMode ? "animate-pulse text-yellow-400" : "text-gray-500"
-                            }`}
+                            className={`p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 shadow-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-200 ${darkMode ? "animate-pulse text-yellow-400" : "text-gray-500"
+                                }`}
                         >
                             {darkMode ? <FaSun /> : <FaMoon />}
                         </button>
@@ -115,9 +115,8 @@ const Navbar = () => {
                     <div className="flex justify-center">
                         <button
                             onClick={toggleDarkMode}
-                            className={`p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 shadow-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-200 ${
-                                darkMode ? "animate-pulse text-yellow-400" : "text-gray-500"
-                            }`}
+                            className={`p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 shadow-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-200 ${darkMode ? "animate-pulse text-yellow-400" : "text-gray-500"
+                                }`}
                         >
                             {darkMode ? <FaSun /> : <FaMoon />}
                         </button>
