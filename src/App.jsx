@@ -18,13 +18,8 @@ const App = () => {
   return (
     <>
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <Hero/>
+     
+      <Hero darkMode={darkMode}/>
       {/* Your main content here */}
       <Footer isDarkMode={darkMode} />
     </>
