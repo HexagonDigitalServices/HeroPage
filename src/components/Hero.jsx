@@ -6,10 +6,10 @@ const Hero = ({ darkMode }) => {
         <div
             className={`${
                 darkMode ? "bg-gradient-to-b from-gray-800 to-black" : "bg-gradient-to-b from-green-50 to-green-100"
-            } transition duration-300`}>
-            <section className="py-10 sm:py-16 lg:py-24">
-                <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-                    <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
+            } transition duration-300 h-screen`}>
+            <section className="py-10 sm:py-16 lg:py-24 h-full flex items-center">
+                <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 h-full flex items-center">
+                    <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2 w-full">
                         <div>
                             <h1
                                 className={`text-4xl font-bold ${
@@ -21,8 +21,7 @@ const Hero = ({ darkMode }) => {
                                     <span
                                         className={`absolute inset-x-0 bottom-0 ${
                                             darkMode ? "border-yellow-400" : "border-[#4ADE80]"
-                                        } border-b-[30px]`}
-                                    ></span>
+                                        } border-b-[30px]`}></span>
                                     <h1
                                         className={`relative text-4xl font-bold ${
                                             darkMode ? "text-white" : "text-black"
@@ -38,9 +37,9 @@ const Hero = ({ darkMode }) => {
                                     darkMode ? "text-gray-300" : "text-black"
                                 } sm:text-xl`}
                             >
-                              Discover a platform designed to elevate your collaborative projects. 
-    Seamlessly connect with your team, streamline workflows, and achieve 
-    remarkable results with FlyKite.
+                                Discover a platform designed to elevate your collaborative projects. 
+                                Seamlessly connect with your team, streamline workflows, and achieve 
+                                remarkable results with FlyKite.
                             </p>
 
                             <div className="mt-10 sm:flex sm:items-center sm:space-x-8">
