@@ -12,8 +12,7 @@ const Navbar = ({ setDarkMode, darkMode }) => {
     return (
         <nav
             className={`bg-white dark:bg-black text-black dark:text-white border-b border-gray-200 dark:border-gray-700 shadow-sm fixed top-0 left-0 w-full z-50 transition duration-300 ease-in-out ${darkMode
-                    ? "shadow-[0_4px_20px_5px_rgba(255,255,0,0.8)]"
-                    : "shadow-[0_4px_20px_5px_rgba(0,0,255,0.6)]"
+                ? "custom-shadow-light" : "custom-shadow-dark"
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
